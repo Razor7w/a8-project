@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "a8-project-4b9fd": {
+      "hosting": {
+        "a8-project": [
+          "a8-project-4b9fd"
+        ]
+      }
+    }
+  }
+}

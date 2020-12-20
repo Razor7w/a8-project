@@ -1,11 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HomeComponent } from './component/home/home.component'
-import { Page404Component } from './component/page404/page404.component'
+import { Page404Component } from './components/page404/page404.component'
+import { LoginComponent } from './components/login/login.component'
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
+  { path: 'home', component: DashboardComponent},
+  { path: 'login', component: LoginComponent},
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
   { path: '**', component: Page404Component}
 ];

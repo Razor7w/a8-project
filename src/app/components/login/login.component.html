@@ -1,0 +1,39 @@
+<div class="center-content">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Login/Register</mat-card-title>
+      <mat-card-subtitle>a8-project</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-tab-group>
+        <mat-tab label="Login">
+          <form class="example-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" value="" type="email" formControlName="email">
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" type="password" formControlName="pass">
+            </mat-form-field>
+            <button type="submit" mat-raised-button color="primary" class="btn-login">Login</button>
+          </form>
+        </mat-tab>
+        <mat-tab label="Register">
+          <form class="example-form" [formGroup]="registerForm" (ngSubmit)="onRegister()">
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Email" value="" type="email" formControlName="email">
+            </mat-form-field>
+          
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="Password" type="password" formControlName="pass">
+            </mat-form-field>
+            <!-- <mat-form-field class="example-full-width">
+              <input matInput placeholder="Confirm Password" type="password" formControlName="confirmPass">
+            </mat-form-field> -->
+            <button type="submit" mat-raised-button color="primary" class="btn-login">Register</button>
+          </form>
+        </mat-tab>
+      </mat-tab-group>
+    </mat-card-content>
+  </mat-card>
+</div>

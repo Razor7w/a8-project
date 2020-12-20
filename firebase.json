@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "a8-project",
+      "public": "dist/a8-project",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}
