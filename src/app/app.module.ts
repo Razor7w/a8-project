@@ -32,8 +32,12 @@ import {environment} from 'src/environments/environment'
 // FORMS
 import {ReactiveFormsModule} from '@angular/forms';
 import { DittoComponent } from './components/ditto/ditto.component';
-import { ExampleChildrenComponent } from './components/example-children/example-children.component'
+import { ChildrenComponent } from './components/children/children.component'
 import { fromEventPattern } from 'rxjs';
+import { ParentComponent } from './components/parent/parent.component';
+import { TrimPipe } from './pipes/trim.pipe';
+import { EmptyStringPipe } from './pipes/empty-string.pipe';
+import { SemicolonForSpacePipe } from './pipes/semicolon-for-space.pipe';
 
 @NgModule({
   declarations: [
@@ -42,7 +46,11 @@ import { fromEventPattern } from 'rxjs';
     NavComponent,
     DashboardComponent,
     DittoComponent,
-    ExampleChildrenComponent
+    ChildrenComponent,
+    ParentComponent,
+    TrimPipe,
+    EmptyStringPipe,
+    SemicolonForSpacePipe
   ],
   imports: [
     AngularFireModule,
