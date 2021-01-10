@@ -22,6 +22,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
 import {MatTabsModule} from '@angular/material/tabs';
+import { FormsModule } from '@angular/forms'
 
 // FIREBASE
 import {AngularFireModule} from '@angular/fire'
@@ -30,7 +31,9 @@ import {environment} from 'src/environments/environment'
 
 // FORMS
 import {ReactiveFormsModule} from '@angular/forms';
-import { DittoComponent } from './components/ditto/ditto.component'
+import { DittoComponent } from './components/ditto/ditto.component';
+import { ExampleChildrenComponent } from './components/example-children/example-children.component'
+import { fromEventPattern } from 'rxjs';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,8 @@ import { DittoComponent } from './components/ditto/ditto.component'
     LoginComponent,
     NavComponent,
     DashboardComponent,
-    DittoComponent
+    DittoComponent,
+    ExampleChildrenComponent
   ],
   imports: [
     AngularFireModule,
@@ -67,7 +71,8 @@ import { DittoComponent } from './components/ditto/ditto.component'
     MatMenuModule,
     MatTabsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
