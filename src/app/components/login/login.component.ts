@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormGroup, FormControl} from '@angular/forms';
+import { Router } from '@angular/router';
 import { AuthService } from '../../services/firebase/auth.service'
 
 @Component({
@@ -21,7 +22,8 @@ export class LoginComponent implements OnInit {
   })
 
   constructor(
-    private loginService: AuthService
+    private loginService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -30,6 +32,14 @@ export class LoginComponent implements OnInit {
   onLogin () {
     console.log('submit form', this.loginForm)
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.pass)
+      .then(resp => {
+        console.log(resp)
+        this.loginService.setLoggedIn(true)
+        this.router.navigate(['home'])
+      })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   onRegister () {
@@ -37,6 +47,8 @@ export class LoginComponent implements OnInit {
     this.loginService.registerByUserEmail(this.registerForm.value.email, this.registerForm.value.pass)
       .then(resp => {
         console.log(resp)
+        this.loginService.setLoggedIn(true)
+        this.router.navigate(['home'])
       })
       .catch(err => {
         console.log(err)
