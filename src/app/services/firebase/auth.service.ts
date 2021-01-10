@@ -6,9 +6,19 @@ import { AngularFireAuth } from '@angular/fire/auth'
 })
 export class AuthService {
 
+  private loggedInStatus = false
+
   constructor(
     private angularFireAuth: AngularFireAuth
   ) { }
+
+  setLoggedIn (value: boolean): void {
+    this.loggedInStatus = value
+  }
+
+  get isLoggedIn (): boolean {
+    return this.loggedInStatus
+  }
 
   async login (email: string, pass: string) {
     try {
