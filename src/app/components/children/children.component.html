@@ -1,0 +1,29 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Componente</mat-card-title>
+    <mat-card-subtitle>Children</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <span>Aquí se muestra el texto en el componente hijo: {{ stringHijo }}</span><br/>
+    <span>Aquí se muestra el texto en el componente hijo con pipe Trim: {{ stringHijo | trim }}</span><br/>
+    <span>Aquí se muestra el texto en el componente hijo con pipe emptyString: {{ stringHijo | emptyString }}</span><br/>
+    <span>Aquí se muestra el texto en el componente hijo con pipe semicolonForSpace: {{ stringHijo | semicolonForSpace }}</span><br/>
+    <mat-form-field appearance="fill" class="input-width">
+      <mat-label>Texto para Componente Padre</mat-label>
+      <input matInput (input)="textoParaEnviar = $event.target.value">
+    </mat-form-field>
+    <button mat-raised-button (click)=botonClick()>Enviar</button>
+    <!-- <mat-form-field appearance="fill" >
+      <mat-label>Ingrese Texto a mostrar</mat-label>
+      <input matInput [(ngModel)]="inputText" (input)="cambioText($event.target.value)">
+    </mat-form-field>
+    <p>
+      {{ inputText }}
+    </p>
+    <a (click)="changeFromChild()">Click Restar desde el Hijo: {{parentData}} </a>
+    <br/>
+    <a>Veces que se hizo click desde el padre: {{ clickChangesParent }}</a>
+    <br/> -->
+  </mat-card-content>
+</mat-card>
