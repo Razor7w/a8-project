@@ -1,14 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HomeComponent } from './components/home/home.component';
-import { Page404Component } from './components/page404/page404.component';
-import { HeaderComponent } from './components/header/header.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { LoginComponent } from './components/login/login.component';
 
 // IMPORT MATERIAL COMPONENTS
@@ -33,19 +29,16 @@ import {AngularFireAuthModule} from '@angular/fire/auth'
 import {environment} from 'src/environments/environment'
 
 // FORMS
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule} from '@angular/forms';
+import { DittoComponent } from './components/ditto/ditto.component'
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
-    Page404Component,
-    HeaderComponent,
-    FooterComponent,
-    SidenavComponent,
     LoginComponent,
     NavComponent,
-    DashboardComponent
+    DashboardComponent,
+    DittoComponent
   ],
   imports: [
     AngularFireModule,
@@ -73,7 +66,8 @@ import {ReactiveFormsModule} from '@angular/forms'
     MatGridListModule,
     MatMenuModule,
     MatTabsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
