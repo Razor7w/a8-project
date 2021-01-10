@@ -1,0 +1,27 @@
+<!-- <a>Texto enviado desde el Hijo al padre: {{ textoPadre }}</a>
+<a (click)="changeFromParent()">Click Sumar del padre</a>
+  <br/>
+<app-children [parentData]=data (textoCambiado)="recibirMensaje($vent)"></app-children> -->
+
+<mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Componente</mat-card-title>
+    <mat-card-subtitle>Padre</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-form-field appearance="fill" >
+      <mat-label>Ingrese Texto a mostrar</mat-label>
+      <input matInput (input)="stringPadre = $event.target.value">
+    </mat-form-field>
+    <app-children [stringHijo]="stringPadre" (enviar)=recibirMensaje($event)></app-children>
+    <span>Texto Enviado desde el componente Hijo: {{ textoRecibidoHijo }}</span>
+    <!-- <p>
+      {{ inputText }}
+    </p>
+    <a (click)="changeFromChild()">Click Restar desde el Hijo: {{parentData}} </a>
+    <br/>
+    <a>Veces que se hizo click desde el padre: {{ clickChangesParent }}</a>
+    <br/> -->
+  </mat-card-content>
+</mat-card>
