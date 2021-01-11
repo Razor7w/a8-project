@@ -38,6 +38,7 @@ import { ParentComponent } from './components/parent/parent.component';
 import { TrimPipe } from './pipes/trim.pipe';
 import { EmptyStringPipe } from './pipes/empty-string.pipe';
 import { SemicolonForSpacePipe } from './pipes/semicolon-for-space.pipe';
+import { MouseDirective } from './directives/handlerEvent/mouse.directive';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { SemicolonForSpacePipe } from './pipes/semicolon-for-space.pipe';
     ParentComponent,
     TrimPipe,
     EmptyStringPipe,
-    SemicolonForSpacePipe
+    SemicolonForSpacePipe,
+    MouseDirective
   ],
   imports: [
     AngularFireModule,
