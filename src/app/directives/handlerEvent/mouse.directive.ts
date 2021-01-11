@@ -12,13 +12,13 @@ export class MouseDirective {
   @HostListener('mouseover')
   blackBackground () {
     this.eRef.nativeElement.classList.add('blackBackground');
-    console.log('MouseOver | blackBackground');
+    // console.log('MouseOver | blackBackground');
   }
 
   @HostListener('mouseout')
   normalBackground() {
     this.eRef.nativeElement.classList.remove('blackBackground');
-    console.log('MouseOut | normalBackground');
+    // console.log('MouseOut | normalBackground');
   }
 
 }
