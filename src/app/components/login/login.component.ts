@@ -33,12 +33,13 @@ export class LoginComponent implements OnInit {
     console.log('submit form', this.loginForm)
     this.loginService.login(this.loginForm.value.email, this.loginForm.value.pass)
       .then(resp => {
-        console.log(resp)
-        this.loginService.setLoggedIn(true)
-        this.router.navigate(['home'])
-      })
-      .catch(err => {
-        console.log(err)
+        console.log('Respuesta de componente', resp)
+        if (resp.code) {
+          alert(resp.message)
+        } else {
+          this.loginService.setLoggedIn(true)
+          this.router.navigate(['home'])
+        }
       })
   }
 

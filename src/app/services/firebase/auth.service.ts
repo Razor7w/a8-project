@@ -22,10 +22,10 @@ export class AuthService {
 
   async login (email: string, pass: string) {
     try {
-      const respAuth = await this.angularFireAuth.auth.signInWithEmailAndPassword(email, pass)
-      console.log('Respuesta Auth -->', respAuth)
+      return await this.angularFireAuth.auth.signInWithEmailAndPassword(email, pass)
+      // console.log('Respuesta Auth -->', respAuth)
     } catch (error) {
-      console.error('error', error)
+      return error
     }
   }
 
