@@ -31,10 +31,18 @@ export class ChildrenComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    console.log('Componente creado --> app-children')
+  }
+
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    console.log('Componente destruido --> app-children')
+    alert('Componente destruido --> app-children')
   }
 
   ngOnChanges(changes: SimpleChanges) {
-    console.log('Cambios', changes)
+    console.log('ngOnChanges', changes)
     this.clickChangesParent += 1
   }
 
