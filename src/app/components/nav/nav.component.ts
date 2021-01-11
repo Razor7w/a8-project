@@ -3,6 +3,7 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
 import { AuthService } from 'src/app/services/firebase/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-nav',
@@ -20,7 +21,14 @@ export class NavComponent {
 
   constructor(
     private breakpointObserver: BreakpointObserver,
-    public loginService: AuthService
+    public loginService: AuthService,
+    private router: Router
   ) {}
+
+  closeSession () {
+    console.log('closeSession')
+    this.loginService.setLoggedIn(false)
+    this.router.navigate(['login'])
+  }
 
 }
